@@ -1,19 +1,38 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+int add(int a, int b)
+{
+  return a+b;
+}
+int sub(int a,int b)
+{
+return a-b;
+}
+int mul(int a,int b)
+{
+  return a*b;
+}
+int divide(int a,int b)
+{
+  if(b==0){
+    printf("Error! Can't Divide by Zero!");
+  }
+  else
+  return a/b;
+}
 int main()
 {
-  int add(int ,int);
-  int sub(int ,int);
-  int mul(int,int);
-  int divide(int,int);
   int ch,a,b,result;
   char c='y';
-  printf("CALCULATOR");
+  printf("CALCULATOR\n");
   printf("***********\n");
-  printf("1. Addition 2. Subtraction 3. Multiplication 4. Division 5. Exit\n");
-  scanf("%d",&ch);
+
   while (c=='y') {
     /* code */
+    printf("1. Addition 2. Subtraction 3. Multiplication 4. Division 5. Exit\n");
+    printf("Enter Your Choice:");
+    scanf("%d",&ch);
     printf("Enter the first number:\n");
     scanf("%d",&a);
     printf("Enter the second number:\n");
@@ -26,28 +45,18 @@ int main()
         printf("%d\n",sub(a,b));
         break;
     case 3:
-        // mul(a,b);
+        printf("%d\n",mul(a,b));
         break;
     case 4:
-        // div(a,b);
+        printf("%d\n",divide(a,b));
         break;
     case 5:
        printf("Exit!!!\n");
+    default:
+        printf("Invalid Input!!!");
   }
   printf("Do you wanna continue?(y/n):");
   scanf("\n%c",&c);
   }
   return 0;
-}
-int add(int a, int b)
-{
-  return a+b;
-}
-int sub(int a,int b)
-{
-return a-b;
-}
-int mul(int a,int b)
-{
-  return a*b;
 }
